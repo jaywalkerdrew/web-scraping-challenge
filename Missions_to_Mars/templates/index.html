@@ -26,9 +26,9 @@
       </div>
 
       <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-8 border">
             <h2>Featured Mars Image</h2>
-            <img src="{{mars_data.featured_image_url}}">
+            <img src="{{mars_data.featured_image_url}}" width=100%>
           </div>
 
           <div class="col-md-4">
@@ -44,7 +44,7 @@
         <!-- Loop for displaying hemisphere pics -->
         {% for pics in mars_data.hemisphere_pics %}
           <div class="col-md-6">
-              <img src="{{pics.img_url}}">
+              <img src="{{pics.img_url}}" width=100%>
             <div class="caption">
               <h4>{{pics.title}}</h4>
             </div>
