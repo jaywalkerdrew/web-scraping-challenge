@@ -38,8 +38,10 @@ browser.visit(facts_url)
 html = browser.html
 soup = bs(html, 'html.parser')
 
-facts_df = pd.read_html(facts_url)
-facts_html_table = facts_df[0].to_html()
+facts_df = pd.read_html(facts_url)[0]
+facts_df.columns = ['Description','Value']
+facts_df = facts_df.set_index('Description')
+facts_html_table = facts_df.to_html()
 
 # Scrape hemisphere images
 hemis_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
